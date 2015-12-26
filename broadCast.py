@@ -19,6 +19,8 @@ import sys
 
 serialPort = '/dev/ttyUSB0'
 
+toSend = sys.argv[0]
+
 # configure the serial connections (the parameters differs on the device you are connecting to)
 ser = serial.Serial(
     port=serialPort,
@@ -33,6 +35,6 @@ ser.isOpen()
 print('Sending Arg to ' + serialPort +' \r\nInsert "exit" to leave the application.')
 
 
-ser.write(input)
+ser.write(toSend)
 ser.close()
 exit()
