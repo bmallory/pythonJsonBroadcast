@@ -3,7 +3,7 @@ import sys
 
 serialPort = '/dev/ttyUSB0'
 
-toSend = sys.argv[0]
+toSend = sys.argv[1]
 
 # configure the serial connections (the parameters differs on the device you are connecting to)
 ser = serial.Serial(
