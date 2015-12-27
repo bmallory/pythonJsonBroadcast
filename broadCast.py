@@ -9,14 +9,14 @@ toSend = sys.argv[0]
 ser = serial.Serial(
     port=serialPort,
     baudrate=9600,
-    parity=serial.PARITY_ODD,
-    stopbits=serial.STOPBITS_TWO,
-    bytesize=serial.SEVENBITS
+    parity=serial.PARITY_NONE
+    stopbits=serial.STOPBITS_ONE,
+    bytesize=serial.EIGHTBITS
 )
 
 ser.isOpen()
 
-print('Sending command to ' + serialPort +' \r\n')
+print('Sending \' '+ toSend +' \' --> ' + serialPort +' \r\n')
 
 ser.write(toSend)
 ser.close()
