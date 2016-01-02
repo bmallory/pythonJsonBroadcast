@@ -10,7 +10,7 @@ toSend = '{lcd1:"Prochain RER C:'
 html = urlopen('http://www.transilien.mobi/train/result?idOrigin=CHV&idDest=CPM').read()
 soup = BeautifulSoup.BeautifulSoup(html, "html5lib")
 for tag in soup.find_all(class_='heure_train'):
-	toSend += ' '+ tag.string
+	toSend += ' '+ tag.string[0:5]
 toSend += '"}'
 
 print(toSend)
