@@ -29,6 +29,7 @@ ser.isOpen()
 
 waz = toSend
 toSend = unicodedata.normalize('NFD', waz).encode('ascii', 'ignore')
-ser.write(toSend.replace('Supprime', 'Sup.'))
+#ser.write(toSend.replace('Supprime', 'Sup.'))
+ser.write(waz.encode('utf-8', 'ignore'))
 ser.close()
 exit()
